@@ -1,0 +1,257 @@
+# Default configuration for RAG Eval Pro
+
+# Evaluator settings
+evaluator:
+  # Enable caching for expensive operations
+  cache_enabled: true
+  cache_dir: ".cache/rag_eval"
+  cache_ttl: 3600  # seconds
+  
+  # Retry settings for API calls
+  max_retries: 3
+  retry_delay: 1  # seconds
+  timeout: 30  # seconds
+  
+  # Batch processing
+  batch_size: 32
+  max_concurrent: 10
+  
+  # Error handling
+  fail_on_error: false
+  skip_invalid_samples: true
+
+# LLM provider settings
+llm:
+  # Provider: openai, anthropic, cohere, etc.
+  provider: "openai"
+  
+  # Model configuration
+  model: "gpt-4"
+  temperature: 0.0
+  max_tokens: 500
+  top_p: 1.0
+  
+  # API configuration
+  api_key_env: "OPENAI_API_KEY"
+  api_base: null
+  organization: null
+  
+  # Rate limiting
+  requests_per_minute: 60
+  tokens_per_minute: 90000
+
+# Embedding model settings
+embeddings:
+  # Model name (sentence-transformers format)
+  model: "all-MiniLM-L6-v2"
+  
+  # Batch processing
+  batch_size: 32
+  
+  # Device: cpu, cuda, mps
+  device: "cpu"
+  
+  # Normalization
+  normalize: true
+  
+  # Cache embeddings
+  cache_enabled: true
+
+# Metric configurations
+metrics:
+  # Retrieval metrics
+  recall_at_k:
+    k: 5
+    threshold: 0.7
+    weight: 1.0
+    enabled: true
+  
+  precision_at_k:
+    k: 5
+    threshold: 0.7
+    weight: 1.0
+    enabled: true
+  
+  ndcg:
+    k: 10
+    threshold: 0.6
+    weight: 1.0
+    enabled: true
+  
+  mrr:
+    threshold: 0.5
+    weight: 1.0
+    enabled: true
+  
+  # Semantic metrics
+  semantic_similarity:
+    model: "all-MiniLM-L6-v2"
+    compare_to: "ground_truth"  # or "contexts"
+    threshold: 0.75
+    weight: 1.0
+    enabled: true
+  
+  bert_score:
+    model: "bert-base-uncased"
+    threshold: 0.8
+    weight: 1.0
+    enabled: false
+  
+  # LLM-based metrics
+  faithfulness:
+    model: "gpt-4"
+    threshold: 0.8
+    weight: 2.0
+    enabled: true
+    prompt_template: null  # Use default
+  
+  relevance:
+    model: "gpt-4"
+    threshold: 0.8
+    weight: 1.5
+    enabled: true
+    prompt_template: null
+  
+  coherence:
+    model: "gpt-4"
+    threshold: 0.7
+    weight: 1.0
+    enabled: true
+    prompt_template: null
+  
+  # Hallucination detection
+  hallucination:
+    method: "entailment"  # keyword, entailment, or llm
+    model: "roberta-large-mnli"
+    threshold: 0.3  # Lower is better (less hallucination)
+    weight: 2.0
+    enabled: true
+
+# Aggregation settings
+aggregation:
+  # Statistics to compute
+  statistics:
+    - mean
+    - median
+    - std
+    - min
+    - max
+    - p25
+    - p75
+    - p95
+  
+  # Grouping
+  group_by:
+    - category
+    - difficulty
+  
+  # Failure analysis
+  failure_analysis:
+    enabled: true
+    min_cluster_size: 3
+    n_clusters: 5
+
+# Reporting settings
+reporting:
+  # Output directory
+  output_dir: "evaluation_results"
+  
+  # Output formats
+  save_json: true
+  save_csv: true
+  save_html: false
+  
+  # Dashboard
+  create_dashboard: false
+  dashboard_port: 8501
+  
+  # Visualization
+  plot_distributions: true
+  plot_correlations: true
+  plot_confusion_matrix: false
+  
+  # Report detail level: minimal, standard, detailed
+  detail_level: "standard"
+  
+  # Include raw samples in output
+  include_samples: false
+
+# Logging settings
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: "INFO"
+  
+  # Log format: text, json
+  format: "text"
+  
+  # Log file
+  file: "rag_eval.log"
+  file_enabled: true
+  
+  # Console output
+  console_enabled: true
+  
+  # Rich formatting for console
+  rich_formatting: true
+  
+  # Log rotation
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
+
+# Dataset validation
+validation:
+  # Require ground truth
+  require_ground_truth: false
+  
+  # Require retrieved contexts
+  require_contexts: true
+  
+  # Minimum lengths
+  min_query_length: 1
+  min_context_length: 10
+  min_answer_length: 1
+  
+  # Strict mode (fail on validation errors)
+  strict: false
+
+# Integration settings
+integrations:
+  langchain:
+    enabled: false
+    extract_source_documents: true
+  
+  llamaindex:
+    enabled: false
+    extract_source_nodes: true
+  
+  custom:
+    enabled: false
+
+# Performance settings
+performance:
+  # Use multiprocessing
+  multiprocessing: false
+  num_workers: 4
+  
+  # Memory management
+  max_memory_mb: 4096
+  clear_cache_on_complete: false
+  
+  # Progress tracking
+  show_progress: true
+  progress_bar_style: "rich"  # rich, tqdm, or none
+
+# Experimental features
+experimental:
+  # Enable experimental features
+  enabled: false
+  
+  # Auto-tuning of thresholds
+  auto_tune_thresholds: false
+  
+  # Active learning for dataset improvement
+  active_learning: false
+  
+  # Explainability features
+  explain_predictions: false
+

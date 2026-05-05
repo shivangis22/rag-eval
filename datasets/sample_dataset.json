@@ -1,0 +1,116 @@
+{
+  "name": "Sample RAG Evaluation Dataset",
+  "version": "1.0.0",
+  "metadata": {
+    "description": "Sample dataset for RAG system evaluation",
+    "created_date": "2024-01-01",
+    "domain": "general_knowledge",
+    "total_samples": 5
+  },
+  "samples": [
+    {
+      "query": "What is the capital of France?",
+      "retrieved_docs": [
+        "Paris is the capital and most populous city of France, with an estimated population of 2,165,423 residents in 2019.",
+        "France is a country in Western Europe with several overseas regions and territories.",
+        "The city of Paris is located in the north-central part of France along the Seine River."
+      ],
+      "generated_answer": "The capital of France is Paris, which is located in the north-central part of the country along the Seine River.",
+      "ground_truth": "Paris",
+      "relevant_docs": [
+        "Paris is the capital and most populous city of France, with an estimated population of 2,165,423 residents in 2019."
+      ],
+      "metadata": {
+        "category": "geography",
+        "difficulty": "easy",
+        "source": "wikipedia",
+        "language": "en"
+      }
+    },
+    {
+      "query": "Who wrote the novel '1984'?",
+      "retrieved_docs": [
+        "George Orwell was an English novelist, essayist, journalist, and critic.",
+        "Nineteen Eighty-Four (also published as 1984) is a dystopian novel by George Orwell published in 1949.",
+        "The novel is set in Airstrip One, a province of the superstate Oceania in a world of perpetual war."
+      ],
+      "generated_answer": "The novel '1984' was written by George Orwell and published in 1949. It is a dystopian novel set in a totalitarian society.",
+      "ground_truth": "George Orwell",
+      "relevant_docs": [
+        "Nineteen Eighty-Four (also published as 1984) is a dystopian novel by George Orwell published in 1949."
+      ],
+      "metadata": {
+        "category": "literature",
+        "difficulty": "easy",
+        "source": "wikipedia",
+        "language": "en"
+      }
+    },
+    {
+      "query": "What is photosynthesis?",
+      "retrieved_docs": [
+        "Photosynthesis is a process used by plants and other organisms to convert light energy into chemical energy.",
+        "During photosynthesis, plants take in carbon dioxide and water, and using sunlight, produce glucose and oxygen.",
+        "The process occurs primarily in the chloroplasts of plant cells, specifically in structures called thylakoids.",
+        "Chlorophyll, the green pigment in plants, plays a crucial role in capturing light energy."
+      ],
+      "generated_answer": "Photosynthesis is the process by which plants convert light energy into chemical energy. Plants use sunlight, carbon dioxide, and water to produce glucose and oxygen. This process occurs in the chloroplasts of plant cells.",
+      "ground_truth": "Photosynthesis is a process used by plants to convert light energy into chemical energy, producing glucose and oxygen from carbon dioxide and water using sunlight.",
+      "relevant_docs": [
+        "Photosynthesis is a process used by plants and other organisms to convert light energy into chemical energy.",
+        "During photosynthesis, plants take in carbon dioxide and water, and using sunlight, produce glucose and oxygen."
+      ],
+      "metadata": {
+        "category": "science",
+        "difficulty": "medium",
+        "source": "textbook",
+        "language": "en"
+      }
+    },
+    {
+      "query": "What are the main causes of climate change?",
+      "retrieved_docs": [
+        "Climate change is primarily caused by human activities that release greenhouse gases into the atmosphere.",
+        "The burning of fossil fuels for energy and transportation is the largest source of greenhouse gas emissions.",
+        "Deforestation contributes to climate change by reducing the number of trees that can absorb carbon dioxide.",
+        "Industrial processes and agriculture also release significant amounts of greenhouse gases.",
+        "Natural factors like volcanic eruptions and solar radiation variations have minimal impact compared to human activities."
+      ],
+      "generated_answer": "The main causes of climate change are human activities that release greenhouse gases. The primary contributor is burning fossil fuels for energy and transportation. Deforestation, industrial processes, and agriculture also significantly contribute to greenhouse gas emissions.",
+      "ground_truth": "Climate change is primarily caused by human activities, especially burning fossil fuels, deforestation, and industrial processes that release greenhouse gases into the atmosphere.",
+      "relevant_docs": [
+        "Climate change is primarily caused by human activities that release greenhouse gases into the atmosphere.",
+        "The burning of fossil fuels for energy and transportation is the largest source of greenhouse gas emissions.",
+        "Deforestation contributes to climate change by reducing the number of trees that can absorb carbon dioxide."
+      ],
+      "metadata": {
+        "category": "science",
+        "difficulty": "medium",
+        "source": "ipcc_report",
+        "language": "en"
+      }
+    },
+    {
+      "query": "Explain the concept of machine learning in simple terms.",
+      "retrieved_docs": [
+        "Machine learning is a subset of artificial intelligence that enables computers to learn from data without being explicitly programmed.",
+        "In traditional programming, humans write specific instructions for computers to follow.",
+        "Machine learning algorithms identify patterns in data and make predictions or decisions based on those patterns.",
+        "Common applications include image recognition, natural language processing, and recommendation systems.",
+        "The more data a machine learning model is trained on, the better it typically performs."
+      ],
+      "generated_answer": "Machine learning is a type of artificial intelligence where computers learn from data instead of following explicit instructions. The algorithms find patterns in data and use them to make predictions or decisions. Common examples include image recognition and recommendation systems. The models improve as they are trained on more data.",
+      "ground_truth": "Machine learning is a subset of AI that allows computers to learn from data and improve their performance without being explicitly programmed, by identifying patterns and making predictions.",
+      "relevant_docs": [
+        "Machine learning is a subset of artificial intelligence that enables computers to learn from data without being explicitly programmed.",
+        "Machine learning algorithms identify patterns in data and make predictions or decisions based on those patterns."
+      ],
+      "metadata": {
+        "category": "technology",
+        "difficulty": "medium",
+        "source": "educational",
+        "language": "en"
+      }
+    }
+  ]
+}
