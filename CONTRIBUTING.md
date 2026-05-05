@@ -17,11 +17,11 @@ Thank you for your interest in contributing to RAG Eval Pro! This document provi
 
 ```bash
 # Fork the repository on GitHub, then clone your fork
-git clone https://github.com/YOUR_USERNAME/rag-eval-pro.git
+git clone https://github.com/shivangis22/rag-eval.git
 cd rag-eval-pro
 
 # Add upstream remote
-git remote add upstream https://github.com/yourusername/rag-eval-pro.git
+git remote add upstream https://github.com/shivangis22/rag-eval.git
 ```
 
 ### 2. Set Up Development Environment
