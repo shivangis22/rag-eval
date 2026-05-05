@@ -1,6 +1,5 @@
 # RAG Eval Pro 🎯
 
-[![CI](https://avatars.githubusercontent.com/u/71970506?v=4&size=64)](https://github.com/shivangis22/rag-eval/actions)
 [![PyPI version](https://badge.fury.io/py/rag-eval-pro.svg)](https://badge.fury.io/py/rag-eval-pro)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
